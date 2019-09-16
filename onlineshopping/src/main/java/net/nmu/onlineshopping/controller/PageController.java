@@ -12,7 +12,7 @@ public class PageController {
 	public ModelAndView index()
 	{
 		ModelAndView mv=new ModelAndView ("page");
-		mv.addObject("greeting","Welcome Naman");
+		mv.addObject("greeting","Welcome Sahil and Sakshi");
 		return mv;
 	}
 }
