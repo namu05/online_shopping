@@ -1,5 +1,15 @@
 package net.nmu.onlineshoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
 public class Category {
 
 	public int getId() {
@@ -42,6 +52,13 @@ public class Category {
 		this.active = active;
 	}
 
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", Description=" + Description + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
+
+	@Id
 	private int id;
 	private String name;
 	private String Description;
