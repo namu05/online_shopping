@@ -27,15 +27,29 @@ public class CategoryTestCase {
 	}
 
 	@Test
-	public void testAddCategory() {
+	public void testCRUDCategory() {
+
 		category = new Category();
-		category.setId(1);
-		category.setName("Telivision");
-		category.setDescription("This is descp for telivisioon");
+		category.setName("Laptop");
+		category.setDescription("This is descp for Laptop");
 		category.setImageURL("PNG_1.png");
-		
-		
+
 		assertEquals("Succesfully added", true, categoryDAO.add(category));
 
+		category = new Category();
+		category.setName("Telivision");
+		category.setDescription("This is descp for Telivision");
+		category.setImageURL("PNG_2.png");
+
+		assertEquals("Succesfully added", true, categoryDAO.add(category));
+
+		category = categoryDAO.get(24);
+		category.setName("TV");
+		assertEquals("Succesfully fetched", true, categoryDAO.update(category));
+
+		assertEquals("Succesfully fetched", true, categoryDAO.delete(category));
+
+		assertEquals("Succesfully fetched", 2, categoryDAO.list().size());
 	}
+
 }
