@@ -1,9 +1,11 @@
 package net.nmu.onlineshoppingbackend.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Category {
@@ -55,10 +57,12 @@ public class Category {
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TAB_CUSTOMER_SEQ")
+	@SequenceGenerator(name="TAB_CUSTOMER_SEQ", sequenceName="TAB_CUSTOMER_SEQ", allocationSize=1)
 	private int id;
 	private String name;
 	private String Description;
+	@Column(name="IMAGE_URL")
 	private String imageURL;
 	private boolean active = true;
 
