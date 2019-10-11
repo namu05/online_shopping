@@ -109,6 +109,12 @@ public Product()
 {
 this.code="PRD"+UUID.randomUUID().toString().substring(26).toUpperCase();	
 }
+public String getCode() {
+	return code;
+}
+public void setCode(String code) {
+	this.code = code;
+}
 	
 	
 }

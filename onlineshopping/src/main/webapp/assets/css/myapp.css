@@ -5,12 +5,12 @@
  */
 
 html {
-	height:50%;
+	height:100%;
 }
 
 body {
-    padding-top: 20px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    height:50%;
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    height:100%;
 }
 
 .slide-image {
@@ -75,8 +75,9 @@ footer {
 
 
 .footer {
+	width:100%;
 	position:absolute;
-	bottom:15px;
+	bottom:20px;
 	height: 60px;
 	
 }
