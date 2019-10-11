@@ -44,10 +44,12 @@
 
 <body>
 
+<div class="wrapper">
 	<!-- Navigation -->
 	<%@include file="./shared/nav-bar.jsp"%>
 
 	<!-- Page Content -->
+	<div class="content">
 	<c:if test="${userClickHome == true }">
 		<%@include file="home.jsp"%>
 	</c:if>
@@ -67,7 +69,7 @@
 		<%@include file="listProducts.jsp"%>
 	</c:if>
 
-
+</div>
 	<!-- Footer -->
 	<%@include file="./shared/footer.jsp"%>
 
@@ -77,7 +79,7 @@
 	<script src="${js}/jquery.dataTables.js"></script>
 	<script src="${js}/dataTables.bootstrap.js"></script>  
 	<script src="${js}/myapp.js"></script>
-
+</div>
 </body>
 
 </html>
