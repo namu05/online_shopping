@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Product {
 	
@@ -87,13 +89,17 @@ public class Product {
 	private String code;
 	private String name;
 	private String brand;
+	@JsonIgnore
 	private String description;
 	@Column(name="UNIT_PRICE")
 	private double unitPrice ;
 	private int quantity;
+	@JsonIgnore
 	private boolean active;
+	@JsonIgnore
 	@Column(name="CATEGORY_ID")
 	private int categoryId;
+	@JsonIgnore
 	@Column(name="SUPPLIER_ID")
 	private int supplierId;
 	private int purchase;
