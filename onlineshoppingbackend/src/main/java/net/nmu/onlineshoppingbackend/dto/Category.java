@@ -7,9 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Category {
 
+	
 	public int getId() {
 		return id;
 	}
@@ -19,19 +22,19 @@ public class Category {
 	}
 
 	public String getName() {
-		return name;
+		return category_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String category_name) {
+		this.category_name = category_name;
 	}
 
 	public String getDescription() {
-		return Description;
+		return category_description;
 	}
 
-	public void setDescription(String description) {
-		Description = description;
+	public void setDescription(String category_description) {
+		this.category_description = category_description;
 	}
 
 	public String getImageURL() {
@@ -50,18 +53,16 @@ public class Category {
 		this.active = active;
 	}
 
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", Description=" + Description + ", imageURL=" + imageURL
-				+ ", active=" + active + "]";
-	}
+
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TAB_CUSTOMER_SEQ")
-	@SequenceGenerator(name="TAB_CUSTOMER_SEQ", sequenceName="TAB_CUSTOMER_SEQ", allocationSize=1)
 	private int id;
-	private String name;
-	private String Description;
+	@Column(name="NAME")
+	@NotBlank(message = "Please enter the Category Name!")
+	private String category_name;
+	@Column(name="DESCRIPTION")
+	@NotBlank(message = "Please enter the Category Description!")
+	private String category_description;
 	@Column(name="IMAGE_URL")
 	private String imageURL;
 	private boolean active = true;
